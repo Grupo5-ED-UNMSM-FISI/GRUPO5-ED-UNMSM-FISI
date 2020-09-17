@@ -12,26 +12,41 @@ Graph.prototype = new Algorithm();
 Graph.prototype.constructor = Graph;
 Graph.superclass = Algorithm.prototype;
 
-var SMALL_ALLLOWED = [[false, true,  false,  false,  true,  true, true, true],
-									 [true,  true, false,  true,  true, true,  false,  true],
-									 [true,  true,  true, true, true,  true,  true,  true],
-									 [true,  true,  true, true, false, true,  true, true],
-									 [true,  true, true,  true, true,  true, true,  false],
-									 [true, true,  true,  true,  true, true, false,  false],
-									 [true, true,  true,  true, true,  true,  true, true],
-									 [true, true, true, true,  true,  true,  true,  true]];
+var SMALL_ALLLOWED = [[true, false,  false,  true,  true,  true, true, true, true, true, true, true,  true,  true,  true,  true],
+									 [true,  true, true,  false,  false, true,  true,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true,  true,  true, true, true,  false,  false,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true,  true,  true, true, true, true,  true, false, false, true, true, true,  true,  true,  true,  true],
+									 [true,  true, true,  true, true,  true, true,  true, true, false, false, true,  true,  true,  true,  true],
+									 [true, true,  true,  true,  true, true, true,  true, true, true, true, false,  false,  true,  true,  true],
+									 [true, true,  true,  true, true,  true,  true, true, true, true, true, true,  true,  false,  false,  true],
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true], 
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true],
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true], 
+									 [true, true, true, true,  true,  true,  true,  true, true, true, true, true,  true,  true,  true,  true]];
 
-var SMALL_CURVE = [[0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0],
-								  [0, 0, 0, 0, 0, 0, 0, 0]]
+var SMALL_CURVE = [[0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0],
+								  [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0]]
 
-var SMALL_X_POS_LOGICAL = [800, 650, 950,  650, 950, 800];
-var SMALL_Y_POS_LOGICAL = [90, 125, 125, 325, 325, 360];
+var SMALL_X_POS_LOGICAL = [775, 675, 875, 625, 725, 825, 925, 600, 650, 700, 750, 800, 850, 900, 950];
+var SMALL_Y_POS_LOGICAL = [40, 100, 100, 160, 160, 160, 160, 220, 220, 220, 220, 220,220, 220, 220];
+
 
 var SMALL_ADJ_MATRIX_X_START = 700;
 var SMALL_ADJ_MATRIX_Y_START = 40;
@@ -52,7 +67,7 @@ var SMALL_ADJ_LIST_SPACING = 10;
 var VERTEX_INDEX_COLOR ="#ff0000";
 var EDGE_COLOR = "#000000";
 
-var SMALL_SIZE = 8;
+var SMALL_SIZE = 15;
 
 
 var HIGHLIGHT_COLOR = "#ff0000";
@@ -85,12 +100,15 @@ Graph.prototype.addControls = function(addDirection)
 
 	if (addDirection)
 	{
-		var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico indirecto"], "GraphType");
-		this.undirectedGraphButton = radioButtonList[0];
+		var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico directo","Grafico indirecto"], "GraphType");
+		
+		this.directedGraphButton = radioButtonList[0];
+		this.directedGraphButton.onclick = this.directedGraphCallback.bind(this, true);
+		this.undirectedGraphButton = radioButtonList[1];
 		this.undirectedGraphButton.onclick = this.directedGraphCallback.bind(this, false);
+		this.directedGraphButton.checked = this.directed;
 		this.undirectedGraphButton.checked = !this.directed;
 	}
-	
 
 	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico peque "], "GraphSize");
 	this.smallGraphButton = radioButtonList[0];
