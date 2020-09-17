@@ -96,7 +96,7 @@ Graph.prototype.addControls = function(addDirection)
 	}
 	
 
-	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico peque "], "GraphSize");
+	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico pequeño "], "GraphSize");
 	this.smallGraphButton = radioButtonList[0];
 	this.smallGraphButton.onclick = this.smallGraphCallback.bind(this);
 
