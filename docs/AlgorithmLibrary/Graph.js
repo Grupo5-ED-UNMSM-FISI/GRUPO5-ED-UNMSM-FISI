@@ -95,7 +95,9 @@ Graph.prototype.addControls = function(addDirection)
 	{
 		addDirection = true;
 	}
-	
+	this.newGraphButton = addControlToAlgorithmBar("Button", "Mostrar Grafo");
+	this.newGraphButton.onclick =  this.newGraphCallback.bind(this);
+
 	if (addDirection)
 	{
 		var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico dirigido","Grafico no dirigido"], "GraphType");
