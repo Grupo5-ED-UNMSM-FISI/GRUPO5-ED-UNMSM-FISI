@@ -102,7 +102,7 @@ Graph.prototype.addControls = function(addDirection)
 
 	this.smallGraphButton.checked = true;
 	
-	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Representacion logica"], 
+	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Representacion Logica"], 
 															"GraphRepresentation");
 	this.logicalButton = radioButtonList[0];
 	this.logicalButton.onclick = this.graphRepChangedCallback.bind(this,1);
