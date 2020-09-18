@@ -27,7 +27,7 @@ BFS.superclass = Graph.prototype;
 
 BFS.prototype.addControls =  function()
 {		
-	addLabelToAlgorithmBar("Start Vertex: ");
+	addLabelToAlgorithmBar("Vertice de inicio: ");
 	this.startField = addControlToAlgorithmBar("Text", "");
 	this.startField.onkeydown = this.returnSubmit(this.startField,  this.startCallback.bind(this), 2, true);
 	this.startField.size = 2;

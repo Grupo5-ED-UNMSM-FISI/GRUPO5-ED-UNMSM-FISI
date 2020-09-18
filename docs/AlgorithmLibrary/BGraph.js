@@ -80,12 +80,10 @@ Graph.prototype.addControls = function(addDirection)
 	{
 		addDirection = true;
 	}
-	this.newGraphButton = addControlToAlgorithmBar("Button", "Mostrar Grafo");
-	this.newGraphButton.onclick =  this.newGraphCallback.bind(this);
-
+	
 	if (addDirection)
 	{
-		var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico directo","Grafico indirecto"], "GraphType");
+		var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico dirigido","Grafico no dirigido"], "GraphType");
 		
 		this.directedGraphButton = radioButtonList[0];
 		this.directedGraphButton.onclick = this.directedGraphCallback.bind(this, true);
@@ -96,7 +94,7 @@ Graph.prototype.addControls = function(addDirection)
 	}
 	
 
-	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico pequeño "], "GraphSize");
+	var radioButtonList = addRadioButtonGroupToAlgorithmBar(["Grafico"], "GraphSize");
 	this.smallGraphButton = radioButtonList[0];
 	this.smallGraphButton.onclick = this.smallGraphCallback.bind(this);
 
